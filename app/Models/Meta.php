@@ -9,5 +9,9 @@ class Meta extends Model
 {
     use HasFactory;
 
+    protected function getTitleAttribute($value){
+        return 'AAAAAAAAAAAAA';
+    }
+
 }
 

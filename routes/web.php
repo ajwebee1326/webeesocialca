@@ -58,7 +58,7 @@ Route::group(['middleware' => 'auth','prefix'=>'/admin'], function () {
     Route::post('/our-works',[OurWorkController::class,'store'])->name('our-works.store');
     Route::get('/our-works/create',[OurWorkController::class,'create'])->name('our-works.create');
     Route::get('/our-works/edit',[OurWorkController::class,'edit'])->name('our-works.edit');
-    Route::delete('/our-works/{id}',[OurWorkController::class,'destroy'])->name('our-works.destroy');
+    Route::delete('/our-works/{our_work}',[OurWorkController::class,'destroy'])->name('our-works.destroy');
 
 
     /*--------------------------------- File Manager ---------------------------------*/

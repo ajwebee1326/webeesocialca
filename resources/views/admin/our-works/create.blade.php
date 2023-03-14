@@ -120,7 +120,7 @@
                   <input type="text" name="accordian_description[]" class="form-control" placeholder="Accordian Description">
                 </div>
               </div>
-              </div>
+            </div>
            
 
             <div class="col-md-12">
@@ -165,19 +165,28 @@
 <script>
   $(document).ready(function() {
 
+    let name = 'chetan';
+    let accordian_html = `<div class="col-md-6">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-icon-default-message">Accordian Title</label>
+                  <input type="text" name="accordian_title[]" class="form-control" placeholder="Accordian Title">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-icon-default-message">Accordian Description</label>
+                  <input type="text" name="accordian_description[]" class="form-control" placeholder="Accordian Description">
+                </div>
+              </div>`;
+
     $('#lfm').filemanager('file');
     $('#og_image').filemanager('file');
     $(".categories").select2()
 
-
-    function getHtml() 
-    {
-        return  '<div class="col-md-6"><div class="mb-3"><label class="form-label" for="basic-icon-default-message">Accordian Title</label><input type="text" name="accordian_title[]" class="form-control" placeholder="Accordian Title"></div></div><div class="col-md-6"><div class="mb-3"><label class="form-label" for="basic-icon-default-message">Accordian Description</label><input type="text" name="accordian_description[]" class="form-control" placeholder="Accordian Description"></div></div>';
-    }
-
   
     $('.add_accordian').click(function() {
-      $('#right_side_accordian').append(getHtml());
+      $('#right_side_accordian').append(accordian_html);
     });
 
    

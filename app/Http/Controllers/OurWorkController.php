@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\OurWork;
 use App\Models\Category;
+use App\Models\Meta;
 use Illuminate\Http\Request;
  use PhpParser\Node\Expr\Cast;
 
@@ -40,6 +41,7 @@ class OurWorkController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
 
         $request->validate([
             'title' => 'required',
@@ -55,8 +57,8 @@ class OurWorkController extends Controller
         $work->meta_title = $request->meta_title;
         $work->meta_description = $request->meta_description;
 
-        $work->accordian_title =$request->accordian_title;
-        $work->accordian_description =$request->accordian_description;
+        $work->accordian_title = $request->accordian_title; 
+        $work->accordian_description = $request->accordian_description;
         $work->og_title =  $request->og_title;
         $work->og_image = $request->og_image;
         $work->thumbnail = $request->thumbnail;
@@ -143,7 +145,7 @@ class OurWorkController extends Controller
      * @param  \App\Models\OurWork  $ourWork
      * @return \Illuminate\Http\Response
      */
-    public function destroy( Request $request , OurWork $ourWork)
+    public function destroy(OurWork $ourWork)
     {
 
         if($ourWork->delete()){
