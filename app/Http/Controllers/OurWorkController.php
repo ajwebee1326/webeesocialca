@@ -91,8 +91,11 @@ class OurWorkController extends Controller
      */
     public function edit(OurWork $ourWork)
     {
+        
         // selecting all categories
         $categories = Category::all();
+
+     
 
         // pushing previus selected category in an array from categories relation
         $old_categories = array();
