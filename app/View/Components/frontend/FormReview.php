@@ -4,7 +4,7 @@ namespace App\View\Components\frontend;
 
 use Illuminate\View\Component;
 
-class Navbar extends Component
+class FormReview extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class Navbar extends Component
      */
     public function render()
     {
-        return view('components.frontend.navbar');
+        return view('components.frontend.form-review');
     }
 }

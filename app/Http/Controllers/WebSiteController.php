@@ -12,17 +12,8 @@ class WebSiteController extends Controller
 
     public function __construct()
     {
-
         $url = Route::current()->uri();
-
-        // 
-
         $meta = Meta::where('url',$url)->first();
-
-        
-        // echo $meta;
-        // exit;
-
         if($meta){
             $this->meta = $meta;
         }else{
@@ -31,8 +22,6 @@ class WebSiteController extends Controller
     }
     
     public function viewIndex(){
-        //  $meta = $this->meta ;
-        //  dd($meta->id);
         return view('frontend.index', ['meta'=>$this->meta]);
     }
 
@@ -44,6 +33,11 @@ class WebSiteController extends Controller
     public function viewGetintouch(){
 
         return view('frontend.getin-touch', ['meta'=>$this->meta]);
+    }
+
+    public function viewWorkWithUs(){
+
+        return view('frontend.work-with-us', ['meta'=>$this->meta]);
     }
 
     

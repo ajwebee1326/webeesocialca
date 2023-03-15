@@ -21,8 +21,9 @@ Route::get('/auth/google/redirect', [AuthController::class,'googleRedirect'])->n
 Route::get('/auth/google/callback',[AuthController::class,'googleCallback'])->name('google.callback');
 
 
-Route::get('/',[WebSiteController::class,'viewIndex']);
+Route::get('/',[WebSiteController::class,'viewIndex'])->name('home');
 Route::get('/about-us',[WebSiteController::class,'viewAbout']);
+Route::get('/work-with-us',[WebSiteController::class,'viewWorkWithUs'])->name('work-with-us');
 
 /*--------------------------------- Auth Routes ---------------------------------*/
 
