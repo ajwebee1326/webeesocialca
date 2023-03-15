@@ -165,7 +165,6 @@
 <script>
   $(document).ready(function() {
 
-    let name = 'chetan';
     let accordian_html = `<div class="col-md-6">
                 <div class="mb-3">
                   <label class="form-label" for="basic-icon-default-message">Accordian Title</label>

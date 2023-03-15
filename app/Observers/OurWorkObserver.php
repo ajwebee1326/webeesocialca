@@ -17,4 +17,10 @@ class OurWorkObserver
         $ourWork->accordian_title = implode(',',$ourWork->accordian_title);
         $ourWork->accordian_description = implode(',',$ourWork->accordian_description);
     }
+
+    public function updating(OurWork $ourWork)
+    {
+        $ourWork->accordian_title = implode(',',$ourWork->accordian_title);
+        $ourWork->accordian_description = implode(',',$ourWork->accordian_description);
+    }
 }

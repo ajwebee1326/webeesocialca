@@ -87,6 +87,7 @@
                     </div>
                   </div>
 
+
                   <div class="col-md-12">
                     <div class="mb-3">
                       <label class="form-label" for="basic-icon-default-message">Short Description</label>
@@ -108,7 +109,43 @@
                     </div>
                   </div>
 
-                  <div class="col-md-6">
+                  {{-- Accrodian Start --}}
+
+                  <div class="row" id="right_side_accordian">
+                    @foreach($ourWork->accordian_title as $accordian)
+
+                        <div class="col-md-5" id="accordian_title_{{ $loop->index }}">
+                          <div class="mb-3">
+                            <label class="form-label" for="basic-icon-default-message">Accordian Title</label>
+                            <input type="text" name="accordian_title[]" value="{{ $accordian }}" class="form-control" placeholder="Accordian Title">
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-6" id="accordian_description_{{ $loop->index }}">
+                          <div class="mb-3">
+                            <label class="form-label" for="basic-icon-default-message">Accordian Description</label>
+                            <input type="text" name="accordian_description[]" value="{{ $ourWork->accordian_description[$loop->index] }}" class="form-control" placeholder="Accordian Description">
+                          </div>
+                        </div>
+
+                        <div class="col-md-1 mt-4" id="accordian_btn_{{ $loop->index }}">
+                          <a href="javascript:void(0)">
+                            <i class="menu-icon tf-icons bx bx-trash" onclick="remove_accordian({{$loop->index}})"></i>
+                          </a>
+                        </div>
+
+
+                        
+                      @endforeach
+                    </div>
+
+                  <div class="col-md-12">
+                    <button type="button" class="btn btn-primary btn-sm  add_accordian">Add Columns</button>
+                  </div>
+
+                  {{-- Accordian end --}}
+
+                  <div class="col-md-6 mt-4">
                     <div class="mb-3">
                       <label class="form-label" for="basic-icon-default-message">OG Title</label>
                       <input type="text" name="og_title" class="form-control" value="{{$ourWork->og_title}}">
@@ -147,9 +184,27 @@
 
 $(document).ready(function (){
 
+  let accordian_html = `<div class="col-md-6">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-icon-default-message">Accordian Title</label>
+                  <input type="text" name="accordian_title[]" class="form-control" placeholder="Accordian Title">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label class="form-label" for="basic-icon-default-message">Accordian Description</label>
+                  <input type="text" name="accordian_description[]" class="form-control" placeholder="Accordian Description">
+                </div>
+              </div>`;
+
   $('#lfm').filemanager('file');
   $('#og_image').filemanager('file');
   $(".categories").select2()
+
+  $('.add_accordian').click(function() {
+    $('#right_side_accordian').last().append(accordian_html);
+  });
 
 });
 
@@ -158,5 +213,12 @@ $(document).ready(function (){
   };
 
   CKEDITOR.replace('editor', options);
+
+
+  function remove_accordian(index) {
+    $('#accordian_title_'+index).remove();
+    $('#accordian_description_'+index).remove();
+    $('#accordian_btn_'+index).remove();
+  }
 </script>
 @endsection

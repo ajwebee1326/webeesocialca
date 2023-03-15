@@ -95,8 +95,6 @@ class OurWorkController extends Controller
         // selecting all categories
         $categories = Category::all();
 
-     
-
         // pushing previus selected category in an array from categories relation
         $old_categories = array();
         foreach($ourWork->categories as $cat){
@@ -130,6 +128,8 @@ class OurWorkController extends Controller
         $ourWork->meta_description = $request->meta_description;
         $ourWork->og_title = $request->og_title;
         $ourWork->og_image = $request->og_image;
+        $ourWork->accordian_title = $request->accordian_title;
+        $ourWork->accordian_description = $request->accordian_description;
 
         if($ourWork->save()){
             $ourWork->categories()->sync($request->categories);
