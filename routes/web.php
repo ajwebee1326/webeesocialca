@@ -24,6 +24,8 @@ Route::get('/auth/google/callback',[AuthController::class,'googleCallback'])->na
 Route::get('/',[WebSiteController::class,'viewIndex'])->name('home');
 Route::get('/about-us',[WebSiteController::class,'viewAbout']);
 Route::get('/work-with-us',[WebSiteController::class,'viewWorkWithUs'])->name('work-with-us');
+Route::get('/blog',[WebSiteController::class,'viewBlog'])->name('blog');
+Route::get('/blog/{blog:title}',[WebSiteController::class,'viewBlogDetails'])->name('blog-details');
 
 /*--------------------------------- Auth Routes ---------------------------------*/
 

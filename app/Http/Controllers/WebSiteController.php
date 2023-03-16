@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Meta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Blog;
 
 class WebSiteController extends Controller
 {
@@ -39,13 +40,16 @@ class WebSiteController extends Controller
 
         return view('frontend.work-with-us', ['meta'=>$this->meta]);
     }
-
-    
-
     
     public function viewBlog(){
+        $blogs = Blog::orderBy('id','desc')->paginate(6);
+        // $blogs->withPath('/blog/page');
+        return view('frontend.blog', ['meta'=> $this->meta,'blogs'=>$blogs]);
+    }
 
-        return view('frontend.blog', ['meta'=> $this->meta]);
+    public function viewBlogDetails(Blog $blog){
+        $recent_blogs = Blog::where('id','!=',$blog->id)->orderBy('id','desc')->take(5)->get();
+        return view('frontend.blog-details', ['meta'=> $this->meta,'blog'=>$blog,'recent_blogs'=>$recent_blogs]);
     }
 
     public function viewOurClients(){

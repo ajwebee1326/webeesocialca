@@ -42,7 +42,7 @@
                         <a class="nav-link" href="{{ route('work-with-us') }}">Work with us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.php">Blog</a>
+                        <a class="nav-link" href="{{ route('blog') }}">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-primary" href="#">Contact Us <span class="fa fa-arrow-circle-o-down ms-2"></span></a>
