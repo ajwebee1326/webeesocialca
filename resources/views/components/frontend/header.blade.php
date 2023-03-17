@@ -17,26 +17,26 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-expanded="false">
                             Our service</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="social-media-marketing.php">Social media
+                            <li><a class="dropdown-item" href="{{route ('social-media-marketing')}}">Social media
                                     marketing</a></li>
-                            <li><a class="dropdown-item" href="website-development.php">Website
+                            <li><a class="dropdown-item" href="{{route ('website-development')}}">Website
                                     development</a></li>
-                            <li><a class="dropdown-item n-link" href="e-mail-marketing-and-crm.php">E-mail marketing
+                            <li><a class="dropdown-item n-link" href="{{route ('e-mail-marketing')}}">E-mail marketing
                                     and CRM </a></li>
-                            <li><a class="dropdown-item" href="design-and-copywriting.php">Design and
+                            <li><a class="dropdown-item" href="{{route ('design-and-copywriting')}}">Design and
                                     copywriting</a></li>
-                            <li><a class="dropdown-item" href="performance-marketing.php">Performance
+                            <li><a class="dropdown-item" href="{{route ('performance-marketing')}}">Performance
                                     marketing</a></li>
-                            <li><a class="dropdown-item n-link" href="seo.php">Search
+                            <li><a class="dropdown-item n-link" href="{{route ('seo-agency')}}">Search
                                     engine optimization</a></li>
-                            <li><a class="dropdown-item" href="mobile-application-development.php">Mobile App
+                            <li><a class="dropdown-item" href="{{route ('mobile-application')}}">Mobile App
                                     development</a></li>
-                            <li><a class="dropdown-item" href="metaverse-development.php">Metaverse
+                            <li><a class="dropdown-item" href="{{route ('metaverse-development')}}">Metaverse
                                     development</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="our-work.php">Our work</a>
+                        <a class="nav-link" href="{{route('our-work')}}">Our work</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('work-with-us') }}">Work with us</a>
