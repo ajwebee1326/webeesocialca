@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Meta;
+use App\Models\OurWork;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Blog;
@@ -62,9 +64,53 @@ class WebSiteController extends Controller
 
     public function viewOurWork(){
 
-
-        return view('frontend.ourwork', ['meta'=> $this->meta]);
+        $categories = Category::all();
+        $ourwork = OurWork::all();
+      
+        return view('frontend.ourwork', ['meta'=> $this->meta], ['ourworks' => $ourwork], ['categories' =>$categories]);
     }
 
+    // Our Services Controller section start here
 
+    public function viewsocialmediamarketing(){
+        
+        return view('frontend.social-media-marketing', ['meta'=> $this->meta]);
+    }
+
+    public function viewwebsitedevelopment(){
+        
+        return view('frontend.website-development', ['meta'=> $this->meta]);
+    }
+
+    public function viewEmailMarketing(){
+        
+        return view('frontend.email-marketing', ['meta'=> $this->meta]);
+    }
+
+    public function viewDesignCopywriting(){
+        
+        return view('frontend.design-and-copywriting', ['meta'=> $this->meta]);
+    }
+
+    public function ViewPerformanceMarketing(){
+        
+        return view('frontend.performance-marketing', ['meta'=> $this->meta]);
+    }
+
+    public function viewSeoAgency(){
+        
+        return view('frontend.seo-agency', ['meta'=> $this->meta]);
+    }
+
+    public function viewMobileApplication(){
+        
+        return view('frontend.mobile-development', ['meta'=> $this->meta]);
+    }
+
+    public function viewMetaverseDevelopment(){
+        
+        return view('frontend.metaverse-development', ['meta'=> $this->meta]);
+    }
+
+    
 }
