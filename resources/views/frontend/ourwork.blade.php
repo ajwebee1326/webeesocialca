@@ -16,25 +16,29 @@
                 <div class="main">
                     <div id="myBtnContainer">
                         <button class="btn active" onclick="filterSelection('ALL')">ALL</button>
-                        <button class="btn" onclick="filterSelection('DESIGN')">DESIGN</button>
-                        <button class="btn" onclick="filterSelection('DIGITAL CAMPAIGNS')"> DIGITAL CAMPAIGNS</button>
-                        <button class="btn" onclick="filterSelection('SOCIAL MEDIA')">SOCIAL MEDIA</button>
-                        <button class="btn" onclick="filterSelection('WEBSITE')">WEBSITE</button>
-                        <button class="btn" onclick="filterSelection('SEO')">SEO</button>
+                        @foreach($categories as $category)
+                        <button class="btn" onclick="filterSelection('{{ $category->name }}')">{{ $category->name }}</button>
+                        @endforeach
                     </div>
 
                     <!-- Portfolio Gallery Grid -->
                     <div class="row">
                     {{-- Our work start --}}
                     @foreach($ourworks as $ourwork)
-                        <div class="column SOCIAL MEDIA GRAPHICS DIGITAL CAMPAIGNS ">
+                        <div class="column  
+                        @foreach($ourwork->categories as $category)
+                        {{ $category->name }}
+                        @endforeach
+                        ">
                             <div class="content">
                                 <a href=""><img
-                                        src="{{asset ('frontend/images')}}" alt="jlf"
-                                        class="img-fluid"></a>
+                                        src="{{ $ourwork->thumbnail }}" alt="jlf"  class="img-fluid"></a>
                                
                                 <h2><a href="jlf-toronto.html">{{ $ourwork->title}}</a></h2>
-                                <p>Social Media, Content,Coverage</p>
+                                <p>
+                                    @foreach($ourwork->categories as $category)
+                                    {{ $category->name }},
+                                    @endforeach
                             </div>
                         </div>
                     @endforeach

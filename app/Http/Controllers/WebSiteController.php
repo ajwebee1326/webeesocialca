@@ -67,7 +67,7 @@ class WebSiteController extends Controller
         $categories = Category::all();
         $ourwork = OurWork::all();
       
-        return view('frontend.ourwork', ['meta'=> $this->meta], ['ourworks' => $ourwork], ['categories' =>$categories]);
+        return view('frontend.ourwork', ['meta'=> $this->meta], ['ourworks' => $ourwork,'categories' =>$categories]);
     }
 
     // Our Services Controller section start here
