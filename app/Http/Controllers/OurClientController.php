@@ -39,10 +39,12 @@ class OurClientController extends Controller
     {
         $request -> validate([
             'image' => 'required',
+            'position' => 'required',
         ]);
         $client = new OurClient();
         $client->image = $request->image;
         $client->image_alt = $request->image_alt;
+        $client->position = $request->position;
         if($client->save()){
             $this->alert('success', 'Client Added Successfully', 'success');
             return redirect()->route('our-clients.index');
@@ -85,9 +87,11 @@ class OurClientController extends Controller
     {
         $request -> validate([
             'image' => 'required',
+            'position' => 'required',
         ]);
         $ourClient->image = $request->image;
         $ourClient->image_alt = $request->image_alt;
+        $ourClient->position = $request->position;
         if($ourClient->save()){
             $this->alert('success', 'Client Updated Successfully', 'success');
             return redirect()->route('our-clients.index');

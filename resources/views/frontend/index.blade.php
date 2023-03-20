@@ -423,36 +423,11 @@
                    <h3>Some of our clients in <span class="text-primary">North America</span></h3>
                 </div>
                 <ul class="client-list">
+                  @foreach($clients_left as $client)
                    <li>
-                      <img src="{{ asset('frontend') }}/images/logos/DAS-Logo.png" alt="DAS">
+                      <img src="{{ $client->image }}" alt="{{ $client->image_alt }}">
                    </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/Prospur-logo.png" alt="Prospur">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/Physiorehab-Logo.png" alt="Physiorehab">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/Taj-Rugs-Logo.png" alt="Taj-Rug">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/CISCO-Logo.png" alt="CISCO">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/Addy-logo.jpg" alt="Addy-logo">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/JLF-Toronto-logo.png" alt="JLF-Toronto">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/Dial.png" alt="Dial">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/transform-lives.png" alt="transform-lives">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/remax-logo.png" alt="remax">
-                   </li>
+                  @endforeach
                 </ul>
              </div>
           </div>
@@ -462,62 +437,11 @@
                    <h3>Some of our clients in <span class="text-primary">Other Regions</span></h3>
                 </div>
                 <ul class="client-list">
+                  @foreach($clients_right as $client)
                    <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/UNDP-Logo.png" alt="UNDP-Logo">
+                      <img src="{{ $client->image }}" alt="{{ $client->image_alt }}">
                    </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/Pearson-logo.png" alt="Pearson">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/teamwork-logo.png" alt="Teamwork">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/mahindra.png" alt="mahindra">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/Max-Healthcare-Logo.png" alt="Max-Healthcare">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/acma-black.png" alt="Acma">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/govt-black.png" alt="Govt Of India">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/bbc-black.png" alt="BBC Media Action">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/resmed-logo.png" alt="resmed">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/mtv-black.png" alt="MTV">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/oriflame-black.png" alt="Oriflame">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/messe-frankfurt-black.png" alt="Messe">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/cbre-black.png" alt="CBRE">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/aston-university-LOGO.jpg" alt="aston-university">
-                   </li>
-                   <!-- <li>
-                         <img src="{{ asset('frontend') }}/images/logos/india/usaid-black.png" alt="USAID">
-                      </li> -->
-                   <!-- <li>
-                         <img src="{{ asset('frontend') }}/images/logos/india/lotus-black.png" alt="Lotus">
-                      </li> -->
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/nasscom-black.png" alt="NASSCOM">
-                   </li>
-                   <li>
-                      <img src="{{ asset('frontend') }}/images/logos/india/Vital-Strategies-Logo.png" alt="Vital-Strategies">
-                   </li>
-
-
+                  @endforeach
                 </ul>
              </div>
           </div>

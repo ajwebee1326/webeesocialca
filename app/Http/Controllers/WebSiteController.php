@@ -6,6 +6,7 @@ use App\Models\Meta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Blog;
+use App\Models\OurClient;
 
 class WebSiteController extends Controller
 {
@@ -23,7 +24,9 @@ class WebSiteController extends Controller
     }
     
     public function viewIndex(){
-        return view('frontend.index', ['meta'=>$this->meta]);
+        $clients_left = OurClient::where('position','left')->get();
+        $clients_right = OurClient::where('position','right')->get();
+        return view('frontend.index', ['meta'=>$this->meta,'clients_left'=>$clients_left,'clients_right'=>$clients_right]);
     }
 
     public function viewAbout(){

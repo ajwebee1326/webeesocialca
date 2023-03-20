@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <x-frontend.header-footer-script-component type='header'/>
 </head>
 
 <body>
@@ -44,6 +45,7 @@
  <script src="{{ asset('frontend') }}/assets/js/animation.gsap.min.js"></script>
  <script src="{{ asset('frontend') }}/assets/js/main.js"></script>
 
+ <x-frontend.header-footer-script-component type='footer'/>
 
 </body>
 

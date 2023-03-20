@@ -7,9 +7,11 @@ use App\Http\Controllers\OurClientController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HeaderFooterScriptController;
 use App\Http\Controllers\MetaController;
 use App\Http\Controllers\OurWorkController;
 use App\Http\Controllers\WebSiteController;
+use App\Models\HeaderFooterScript;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -53,7 +55,7 @@ Route::group(['middleware' => 'auth','prefix'=>'/admin'], function () {
     Route::resources([
         '/our-clients' => OurClientController::class,
         '/category' => CategoryController::class,
-        '/blog' => BlogController::class
+        '/blog' => BlogController::class,
         // '/our-works' => OurWorkController::class
     ]);
 
@@ -85,6 +87,11 @@ Route::group(['middleware' => 'auth','prefix'=>'/admin'], function () {
     Route::get('/meta', [MetaController::class, 'index'])->name('meta.index');
     Route::get('/meta{meta}', [MetaController::class, 'edit'])->name('meta.edit');
     Route::put('meta/{meta}', [MetaController::class, 'update'])->name('meta.update');
+
+    /*--------------------------------- Header Footer Script ---------------------------------*/
+
+    Route::get('/header-footer', [HeaderFooterScriptController::class, 'edit'])->name('header-footer-script.edit');
+    Route::post('/header-footer', [HeaderFooterScriptController::class, 'update'])->name('header-footer-script.update');
 
 });
 

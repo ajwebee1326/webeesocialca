@@ -1834,7 +1834,7 @@ button.slick-disabled {
 }
 /*---- Blog ----*/
 .blog-banner {
-  background: url(/images/blog-banner.jpg) no-repeat center center ;
+  background: url('http://127.0.0.1:8000/storage/files/1/blogs/blog-banner.jpg') no-repeat center center ;
   background-size: cover;
   width: 100%;
   height: 270px;

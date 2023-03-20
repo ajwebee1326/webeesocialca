@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('our_clients', function (Blueprint $table) {
+        Schema::create('header_footer_scripts', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->string('image_alt')->nullable();
-            $table->string('position');
+            $table->longText('header_script')->nullable();
+            $table->longText('footer_script')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('our_clients');
+        Schema::dropIfExists('header_footer_scripts');
     }
 };

@@ -35,6 +35,17 @@
                 <input type="text" class="form-control" id="image_alt" name="image_alt" placeholder="ACME Inc." >
               </div>
             </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="basic-icon-default-company">Position</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                <select name="position" id="" class="form-control">
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                </select>
+              </div>
+            </div>
             <button type="submit" class="btn btn-primary">Save</button>
           </form>
         </div>
