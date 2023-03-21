@@ -212,5 +212,12 @@ It is just to check the uri segment value so that we can activate the currenct s
           <div data-i18n="Layouts">Meta</div>
         </a>
       </li>
+
+      <li class="menu-item {{Request::segment(2)== 'header-footer' ? 'menu-item active' : ''}}">
+        <a href="{{route('header-footer-script.edit')}}" class="menu-link ">
+          <i class="menu-icon tf-icons bx bx-code"></i>
+          <div data-i18n="Layouts">Scripts</div>
+        </a>
+      </li>
     </ul>
   </aside>
