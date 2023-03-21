@@ -5,91 +5,57 @@
 
 @section('content')
 
-<style>
-    .container {
-        width: 1180px;
-        margin-top: 3em;
-    }
 
-    #accordion .panel {
-        border-radius: 0;
-        border: 0;
-        margin-top: 0px;
-    }
-
-    #accordion a {
-        display: block;
-        padding: 10px 15px;
-        border-bottom: 1px solid #b42b2b;
-        text-decoration: none;
-    }
-
-    #accordion .panel-heading a.collapsed:hover,
-    #accordion .panel-heading a.collapsed:focus {
-        background-color: #b42b2b;
-        color: white;
-        transition: all 0.2s ease-in;
-    }
-
-    #accordion .panel-heading a.collapsed:hover::before,
-    #accordion .panel-heading a.collapsed:focus::before {
-        color: white;
-    }
-
-    #accordion .panel-heading {
-        padding: 0;
-        border-radius: 0px;
-        text-align: center;
-    }
-
-    #accordion .panel-heading a:not(.collapsed) {
-        color: white;
-        background-color: #b42b2b;
-        transition: all 0.2s ease-in;
-    }
-
-    /* Add Indicator fontawesome icon to the left */
-    #accordion .panel-heading .accordion-toggle::before {
-        font-family: 'FontAwesome';
-        content: '\f00d';
-        float: left;
-        color: white;
-        font-weight: lighter;
-        transform: rotate(0deg);
-        transition: all 0.2s ease-in;
-    }
-
-    #accordion .panel-heading .accordion-toggle.collapsed::before {
-        color: #444;
-        transform: rotate(-135deg);
-        transition: all 0.2s ease-in;
-    }
-</style>
-
-
-<section class="blog-banner d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="text-white">{{$ourwork->title}}</h2>
+ <!-- Header Banner -->
+    <section class="header-banner align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-white mb-0">{{$ourwork->title}}</h3>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+<!-- Header Banner End-->
 
-</section>
 
-<div class="row">
+<section class="sec-space our-work-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-4">
+                            <img src="{{ $ourwork->thumbnail }}" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="accordion" id="accordion">
+                        <!-- One -->
+                        <div class="accordion-item">
+                        @foreach($ourwork->accordian_title as $acordian_title)
+                            <h4 class="accordion-header" id="acc_1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
+                                {{ $acordian_title}}
+                                </button>
+                            </h4>
+                            @endforeach
 
-    <div class="column">
-        <div class="content">
-            <a><img src="{{ $ourwork->thumbnail }}" alt="jlf" class="img-fluid"></a>
-            <h2><a href="">{{ $ourwork->title}}</a></h2>
-            <p> {!! $ourwork->description !!}</p>
-            <p>
+                            @foreach($ourwork->accordian_description as $acordian_description)
+                            <div id="collapse_1" class="accordion-collapse collapse show" aria-labelledby="acc_1" data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p> {{$acordian_description}}</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
 
+<!-- 
 <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -110,4 +76,4 @@
       @endforeach
     </div>
   </div>
-</div>
+</div> -->
