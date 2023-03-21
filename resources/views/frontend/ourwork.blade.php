@@ -37,7 +37,17 @@
                                 <h2><a href="{{route('ourwork-details',$ourwork->slug)}}">{{ $ourwork->title}}</a></h2>
                                 <p>
                                     @foreach($ourwork->categories as $category)
-                                    {{ $category->name }},
+
+                                        @if(!$loop->last)
+
+                                            {{ $category->name }} ,
+                                        
+                                        @else
+
+                                            {{ $category->name }}
+                                        
+                                        @endif
+
                                     @endforeach
                             </div>
                         </div>

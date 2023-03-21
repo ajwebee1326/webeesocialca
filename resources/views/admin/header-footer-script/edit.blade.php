@@ -12,19 +12,11 @@
             @csrf
             <div class="mb-3">
               <label for="header" class="form-label">Header Script</label>
-                <textarea name="header_script" id="" cols="130" rows="20">
-                  @if($script)
-                    {{ $script->header_script }}
-                  @endif
-                </textarea>
+                <textarea name="header_script" id="" cols="130" rows="20">@if($script){{ $script->header_script }}@endif</textarea>
             </div>
             <div class="mb-3">
               <label for="header" class="form-label">Footer Script</label>
-                <textarea name="footer_script" id="" cols="130" rows="20">
-                  @if($script)
-                    {{ $script->footer_script }}
-                  @endif
-                </textarea>
+                <textarea name="footer_script" id="" cols="130" rows="20">@if($script){{ $script->footer_script }}@endif</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
           </form>
