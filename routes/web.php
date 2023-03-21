@@ -26,8 +26,10 @@ Route::get('/',[WebSiteController::class,'viewIndex'])->name('home');
 Route::get('/about-us',[WebSiteController::class,'viewAbout']);
 Route::get('/work-with-us',[WebSiteController::class,'viewWorkWithUs'])->name('work-with-us');
 Route::get('/our-work',[WebSiteController::class,'viewOurWork'])->name('our-work');
+Route::get('/our-work/{our_work:slug}',[WebSiteController::class,'viewOurworkDetails'])->name('ourwork-details');
+
 Route::get('/blog',[WebSiteController::class,'viewBlog'])->name('blog');
-Route::get('/blog/{blog:title}',[WebSiteController::class,'viewBlogDetails'])->name('blog-details');
+Route::get('/blog/{blog:slug}',[WebSiteController::class,'viewBlogDetails'])->name('blog-details');
 
 
 /*--------------------------------- Start Our Service Routes ---------------------------------*/

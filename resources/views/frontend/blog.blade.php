@@ -28,7 +28,7 @@
                             <h2><a href="#">{{ $blog->title }}</a></h2>
                             <p class="mb-0">{{ $blog->short_description }}</p>
                             <div class="blog-button mt-3">
-                                <a href="{{ route('blog-details',$blog->title) }}" class="btn btn-secondary">Read More</a>
+                                <a href="{{ route('blog-details',$blog->slug) }}" class="btn btn-secondary">Read More</a>
                             </div>
                         </div>
                     </div>

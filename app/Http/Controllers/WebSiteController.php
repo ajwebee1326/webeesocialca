@@ -70,6 +70,14 @@ class WebSiteController extends Controller
         return view('frontend.ourwork', ['meta'=> $this->meta], ['ourworks' => $ourwork,'categories' =>$categories]);
     }
 
+    public function viewOurworkDetails(OurWork $ourWork)
+    {
+        //$ourWork = OurWork::where('id',)
+        return view('frontend.ourwork-details', ['meta'=> $this->meta,'ourwork'=>$ourWork]);
+
+    }
+
+
     // Our Services Controller section start here
 
     public function viewsocialmediamarketing(){

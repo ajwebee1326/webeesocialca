@@ -34,7 +34,7 @@
                                 <a href=""><img
                                         src="{{ $ourwork->thumbnail }}" alt="jlf"  class="img-fluid"></a>
                                
-                                <h2><a href="jlf-toronto.html">{{ $ourwork->title}}</a></h2>
+                                <h2><a href="{{route('ourwork-details',$ourwork->slug)}}">{{ $ourwork->title}}</a></h2>
                                 <p>
                                     @foreach($ourwork->categories as $category)
                                     {{ $category->name }},
